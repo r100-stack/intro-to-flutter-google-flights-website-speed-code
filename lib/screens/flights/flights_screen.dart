@@ -11,7 +11,9 @@ class FlightsScreen extends StatelessWidget {
       child: Row(
         children: [
           LeftSelector(),
-          MainFlightContent(),
+          Expanded(
+            child: MainFlightContent(),
+          ),
         ],
       ),
     );

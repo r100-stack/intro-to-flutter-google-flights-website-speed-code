@@ -5,6 +5,25 @@ class LeftSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return SizedBox(
+      width: 50.0,
+      child: Column(
+        children: [],
+      ),
+    );
+  }
+
+  Widget _buildButton() {
+    return Material(
+      child: InkWell(
+        child: Container(
+          child: Column(
+            children: [
+              Icon(Icons.airplanemode_active),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

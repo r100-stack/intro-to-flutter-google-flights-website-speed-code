@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               children: const [
                 LeftSelector(),
-                FlightsScreen(),
+                Expanded(child: FlightsScreen()),
               ],
             ),
           )
