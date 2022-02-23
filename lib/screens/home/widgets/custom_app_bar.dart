@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:black_hole_flutter/black_hole_flutter.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({
@@ -31,6 +32,7 @@ class CustomAppBar extends StatelessWidget {
           padding: const EdgeInsets.only(right: 8.0),
           child: Center(
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: context.theme.primaryColor),
               onPressed: () => null,
               child: const Text('Sign in'),
             ),

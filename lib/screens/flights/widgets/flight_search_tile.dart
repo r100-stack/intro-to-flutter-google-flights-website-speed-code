@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop_demo_website/constants/dimension_constants.dart';
+import 'package:black_hole_flutter/black_hole_flutter.dart';
 
 class FlightSearchTile extends StatelessWidget {
   const FlightSearchTile({
@@ -10,7 +11,6 @@ class FlightSearchTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16.0),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       constraints: BoxConstraints(maxWidth: 992.0),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -28,11 +28,58 @@ class FlightSearchTile extends StatelessWidget {
               spreadRadius: 3.0),
         ],
       ),
-      child: Column(
+      child: Stack(
+        clipBehavior: Clip.none,
         children: [
-          const _SubRow(),
-          const SizedBox(height: kDefaultMargin / 4),
-          const _MainRow(),
+          Padding(
+            padding: const EdgeInsets.only(
+                left: 16.0, right: 16.0, top: 8.0, bottom: 48.0),
+            child: Column(
+              children: [
+                const _SubRow(),
+                const SizedBox(height: kDefaultMargin / 4),
+                const _MainRow(),
+              ],
+            ),
+          ),
+          Positioned(
+            // alignment: Alignment.bottomCenter,
+            bottom: -20.0,
+            left: 0.0,
+            right: 0.0,
+            child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(24.0),
+                    boxShadow: [
+                      BoxShadow(color: Color.fromRGBO(60, 64, 67, 0.3), offset: Offset(0, 1), blurRadius: 3.0),
+                      BoxShadow(color: Color.fromRGBO(60, 64, 67, 0.15), offset: Offset(0, 4), blurRadius: 8.0, spreadRadius: 3.0),
+                    ]
+                ),
+                child: Material(
+                  color: context.theme.primaryColor,
+                  borderRadius: BorderRadius.circular(24.0),
+                  child: InkWell(
+                    onTap: () => null,
+                    borderRadius: BorderRadius.circular(24.0),
+                    child: SizedBox(
+                      height: 40.0,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const SizedBox(width: 12.0),
+                          Icon(Icons.search, color: Colors.white),
+                          const SizedBox(width: 8.0),
+                          Text('Search', style: TextStyle(color: Colors.white),),
+                          const SizedBox(width: 16.0),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
