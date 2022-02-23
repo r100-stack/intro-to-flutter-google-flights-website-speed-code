@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_workshop_demo_website/constants/dimension_constants.dart';
 import 'package:flutter_workshop_demo_website/screens/flights/widgets/flight_search_tile.dart';
+import 'package:flutter_workshop_demo_website/screens/flights/widgets/warning_tile.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainFlightContent extends StatelessWidget {
@@ -15,6 +16,7 @@ class MainFlightContent extends StatelessWidget {
         height: 800.0,
         constraints: const BoxConstraints(maxWidth: 1248.0),
         child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SvgPicture.asset('assets/flights_3.svg', width: 1248),
             const Text(
@@ -25,7 +27,8 @@ class MainFlightContent extends StatelessWidget {
                   fontSize: 56.0),
             ),
             const SizedBox(height: kDefaultMargin),
-            const FlightSearchTile()
+            const FlightSearchTile(),
+            const WarningTile(),
           ],
         ),
       ),
