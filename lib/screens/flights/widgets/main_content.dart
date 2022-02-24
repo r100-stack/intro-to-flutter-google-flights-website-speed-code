@@ -19,14 +19,6 @@ class MainFlightContent extends StatelessWidget {
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              SvgPicture.asset('assets/flights_3.svg', width: 1248),
-              const Text(
-                'Flights',
-                style: TextStyle(
-                    fontFamily: 'GoogleFont',
-                    fontWeight: FontWeight.w500,
-                    fontSize: 56.0),
-              ),
               const SizedBox(height: kDefaultMargin),
               const FlightSearchTile(),
               const WarningTile(),

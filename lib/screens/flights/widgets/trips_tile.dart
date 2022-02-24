@@ -22,35 +22,6 @@ class TripsTile extends StatelessWidget {
   Widget _buildTopRow() {
     return Row(
       children: [
-        const SizedBox(width: 16.0),
-        Text(
-          'Trips from Baton Rouge',
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0),
-        ),
-        const SizedBox(width: 16.0),
-        Text(
-          'Round Trip · 1 passenger',
-          style: TextStyle(fontSize: 14.0, color: Color(0xFF70757a)),
-        ),
-        IconButton(
-          icon: Icon(Icons.info_outline),
-          onPressed: () => null,
-          splashColor: Colors.transparent,
-          hoverColor: Colors.transparent,
-          highlightColor: Colors.transparent,
-        ),
-        Spacer(),
-        TextButton(
-          onPressed: () => null,
-          style: TextButton.styleFrom(primary: Color(0xFF1a73e8)),
-          child: Text(
-            'Explore destinations',
-            style: TextStyle(
-              color: Color(0xFF174ea6),
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        )
       ],
     );
   }
@@ -77,10 +48,7 @@ class TripsTile extends StatelessWidget {
 
   Widget _buildRight() {
     return CustomHoverBehavior(
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(16.0),
-        child: Image.asset('assets/map.png'),
-      ),
+      child: const SizedBox.shrink(),
     );
   }
 }

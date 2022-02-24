@@ -8,21 +8,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: CustomScrollView(
-        slivers: [
-          const CustomAppBar(),
-          SliverToBoxAdapter(
-            child: Row(
-              children: const [
-                LeftSelector(),
-                Expanded(child: FlightsScreen()),
-              ],
-            ),
-          )
-        ],
-      ),
-    );
+    return const SizedBox.shrink();
   }
 }

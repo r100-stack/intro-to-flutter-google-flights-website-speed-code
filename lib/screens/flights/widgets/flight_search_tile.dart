@@ -9,80 +9,7 @@ class FlightSearchTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0),
-      constraints: BoxConstraints(maxWidth: 992.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        boxShadow: [
-          BoxShadow(
-            color: Color.fromRGBO(60, 64, 67, .3),
-            offset: Offset(0, 1),
-            blurRadius: 3.0,
-          ),
-          BoxShadow(
-              color: Color.fromRGBO(60, 64, 67, .15),
-              offset: Offset(0, 4),
-              blurRadius: 8.0,
-              spreadRadius: 3.0),
-        ],
-      ),
-      child: Stack(
-        clipBehavior: Clip.none,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-                left: 16.0, right: 16.0, top: 8.0, bottom: 48.0),
-            child: Column(
-              children: [
-                const _SubRow(),
-                const SizedBox(height: kDefaultMargin / 4),
-                const _MainRow(),
-              ],
-            ),
-          ),
-          Positioned(
-            // alignment: Alignment.bottomCenter,
-            bottom: -20.0,
-            left: 0.0,
-            right: 0.0,
-            child: Center(
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(24.0),
-                    boxShadow: [
-                      BoxShadow(color: Color.fromRGBO(60, 64, 67, 0.3), offset: Offset(0, 1), blurRadius: 3.0),
-                      BoxShadow(color: Color.fromRGBO(60, 64, 67, 0.15), offset: Offset(0, 4), blurRadius: 8.0, spreadRadius: 3.0),
-                    ]
-                ),
-                child: Material(
-                  color: context.theme.primaryColor,
-                  borderRadius: BorderRadius.circular(24.0),
-                  child: InkWell(
-                    onTap: () => null,
-                    borderRadius: BorderRadius.circular(24.0),
-                    child: SizedBox(
-                      height: 40.0,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const SizedBox(width: 12.0),
-                          Icon(Icons.search, color: Colors.white),
-                          const SizedBox(width: 8.0),
-                          Text('Search', style: TextStyle(color: Colors.white),),
-                          const SizedBox(width: 16.0),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
-    );
+    return const SizedBox.shrink();
   }
 }
 
@@ -100,55 +27,16 @@ class _SubRow extends StatelessWidget {
     );
   }
 
-  DropdownButton<String> _buildClassSelector() {
-    return DropdownButton<String>(
-      value: 'Economy',
-      underline: const SizedBox.shrink(),
-      // decoration: InputDecoration(
-      //     // prefixIcon: Icon(Icons.person),
-      //
-      //     ),
-      items: [
-        _buildDropdownMenuItem(Icons.person, 'Economy'),
-        _buildDropdownMenuItem(Icons.person, 'Premium economy'),
-        _buildDropdownMenuItem(Icons.person, 'Business'),
-        _buildDropdownMenuItem(Icons.person, 'First'),
-      ],
-      onChanged: (String? value) => null,
-    );
+  Widget _buildClassSelector() {
+    return const SizedBox.shrink();
   }
 
-  SizedBox _buildRoundTrip() {
-    return SizedBox(
-      width: 141.0,
-      child: DropdownButton<String>(
-        value: 'Round trip',
-        underline: const SizedBox.shrink(),
-        // decoration: InputDecoration(
-        //     // prefixIcon: Icon(Icons.person),
-        //
-        //     ),
-        items: [
-          _buildDropdownMenuItem(Icons.person, 'Round trip'),
-          _buildDropdownMenuItem(Icons.person, 'One way'),
-          _buildDropdownMenuItem(Icons.person, 'Multi-city'),
-        ],
-        onChanged: (String? value) => null,
-      ),
-    );
+  Widget _buildRoundTrip() {
+    return const SizedBox.shrink();
   }
 
-  DropdownMenuItem<String> _buildDropdownMenuItem(IconData icon, String text) {
-    return DropdownMenuItem(
-      child: Row(
-        children: [
-          Icon(icon),
-          const SizedBox(width: 10.0),
-          Text(text),
-        ],
-      ),
-      value: text,
-    );
+  Widget _buildDropdownMenuItem(IconData icon, String text) {
+    return const SizedBox.shrink();
   }
 }
 
@@ -159,80 +47,16 @@ class _MainRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 56.0,
-      child: Row(
-        children: [
-          Expanded(
-            flex: 6,
-            child: Row(
-              children: [
-                Expanded(child: _buildTextField()),
-                Expanded(child: _buildTextField()),
-              ],
-            ),
-          ),
-          const SizedBox(width: 16.0),
-          Row(
-            children: [_buildDateSelector()],
-          )
-        ],
-      ),
+      child: const SizedBox.shrink(),
     );
   }
 
   Widget _buildTextField() {
-    return TextField(
-      decoration: InputDecoration(
-        prefixIcon: Icon(Icons.people),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4.0),
-          borderSide: const BorderSide(color: Color(0xFFdadce0)),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4.0),
-          borderSide: const BorderSide(color: Color(0xFF9aa0a6)),
-        ),
-      ),
-    );
+    return const SizedBox.shrink();
   }
 
   Widget _buildDateSelector() {
-    return Container(
-      decoration: BoxDecoration(
-          border: Border.all(color: Color(0xFFdadce0)),
-          borderRadius: BorderRadius.circular(4.0)),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          const SizedBox(width: 16.0),
-          Icon(Icons.people),
-          const SizedBox(width: 8.0),
-          Center(
-            child: Text(
-              'Thu, Mar 10',
-              style: TextStyle(fontSize: 16.0),
-            ),
-          ),
-          const SizedBox(width: 2.0),
-          _buildInkWellButton(Icons.chevron_left),
-          _buildInkWellButton(Icons.chevron_right),
-          Container(
-            width: 1.0,
-            margin: const EdgeInsets.symmetric(vertical: 8.0),
-            color: Color(0xFFdadce0),
-          ),
-          const SizedBox(width: 16.0),
-          Center(
-            child: Text(
-              'Thu, Mar 10',
-              style: TextStyle(fontSize: 16.0),
-            ),
-          ),
-          const SizedBox(width: 2.0),
-          _buildInkWellButton(Icons.chevron_left),
-          _buildInkWellButton(Icons.chevron_right),
-        ],
-      ),
-    );
+    return const SizedBox.shrink();
   }
 
   Widget _buildInkWellButton(IconData icon) {
